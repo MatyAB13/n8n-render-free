@@ -1,12 +1,11 @@
 FROM n8nio/n8n:latest
 
-ENV N8N_HOST=0.0.0.0
-ENV N8N_PORT=5678
-ENV N8N_PROTOCOL=https
-ENV WEBHOOK_URL=https://n8n-render-free-7zi7.onrender.com/
-ENV PATH="/usr/local/lib/node_modules/n8n/bin:${PATH}"
+USER root
+# Preparamos los permisos para que n8n no tenga errores guardando credenciales
+RUN mkdir -p /home/node/.n8n && chown -R node:node /home/node/.n8n
 
+USER node
+# Exponemos el puerto
 EXPOSE 5678
 
-ENTRYPOINT []
-CMD ["sh", "-c", "n8n start"]
+CMD ["n8n", "start"]

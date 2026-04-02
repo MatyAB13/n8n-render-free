@@ -22,6 +22,6 @@ services:
       - key: DB_POSTGRESDB_SSL
         value: "true"
       - key: N8N_ENCRYPTION_KEY
-        generateValue: true
+        value: "clave_secreta_n8n_render_99212"
       - key: WEBHOOK_URL
         value: "https://n8n-gratis.onrender.com"

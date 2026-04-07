@@ -21,6 +21,10 @@ services:
         value: "5432"
       - key: DB_POSTGRESDB_SSL
         value: "true"
+      - key: PGSSLMODE
+        value: "require"
+      - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
+        value: "false"
       - key: N8N_ENCRYPTION_KEY
         value: "clave_secreta_n8n_render_99212"
       - key: WEBHOOK_URL
